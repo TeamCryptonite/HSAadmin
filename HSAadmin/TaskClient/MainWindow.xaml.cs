@@ -20,6 +20,7 @@ using System.Net.Http.Headers;
 using System.Web.Script.Serialization;
 using System.Runtime.InteropServices;
 using System.Configuration;
+using HSAManager;
 using Microsoft.Identity.Client;
 
 namespace TaskClient
@@ -31,6 +32,7 @@ namespace TaskClient
     {
         private HttpClient httpClient = new HttpClient();
         private PublicClientApplication pca = null;
+        private BizzaroClient client = null;
 
         public MainWindow()
         {

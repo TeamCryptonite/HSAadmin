@@ -34,3 +34,5 @@ C:\Users\atqgy\Desktop\HSAadmin\TaskClient\obj\Debug\MainWindow.baml
 C:\Users\atqgy\Desktop\HSAadmin\TaskClient\obj\Debug\TodoListClient.g.resources
 C:\Users\atqgy\Desktop\HSAadmin\TaskClient\obj\Debug\TaskClient.Properties.Resources.resources
 C:\Users\atqgy\Desktop\HSAadmin\TaskClient\obj\Debug\TaskClient.csproj.GenerateResource.Cache
+C:\Users\pah9qd\Documents\TeamCryptonite\HSAadmin\HSAadmin\TaskClient\obj\Debug\TodoListClient.exe
+C:\Users\pah9qd\Documents\TeamCryptonite\HSAadmin\HSAadmin\TaskClient\obj\Debug\TodoListClient.pdb
