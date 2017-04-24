@@ -61,6 +61,7 @@ namespace TaskClient
                 EditProfileButton.Visibility = Visibility.Visible;
                 SignOutButton.Visibility = Visibility.Visible;
                 UsernameLabel.Content = result.User.Name;
+                client = new BizzaroClient(result);
                 GetTodoList();
             }
             catch (MsalException ex)
@@ -97,6 +98,7 @@ namespace TaskClient
                 EditProfileButton.Visibility = Visibility.Visible;
                 SignOutButton.Visibility = Visibility.Visible;
                 UsernameLabel.Content = result.User.Name;
+                client = new BizzaroClient(result);
                 GetTodoList();
             }
             catch (MsalException ex)
@@ -167,6 +169,31 @@ namespace TaskClient
 
         private async void GetTodoList()
         {
+
+            // Example
+
+            // Get a paginator of users. Will accept a query as a parameter to find a user
+            var usersPaginator = client.Admin.GetListOfUsers();
+
+            // Get's the first set of results from the paginator. Keep calling .Next to get 
+            // more and more results. Make sure to await it.
+            var usersList = await usersPaginator.Next();
+
+            // Find a user in the list using LINQ. Not required.
+            var sethUser = usersList.FirstOrDefault(u => u.GivenName.Contains("Seth"));
+
+            // Change an attribute about a user.
+            sethUser.IsActiveUser = false;
+
+            // Save the changes to the Database. Make sure to await it.
+            var status = await client.Admin.UpdateUser(sethUser.UserGuid, sethUser);
+
+            // End Example
+
+
+
+
+
             AuthenticationResult result = null;
             try
             {

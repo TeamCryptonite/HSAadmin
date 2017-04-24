@@ -107,6 +107,7 @@
     <Compile Include="Helpers\BizzaroHelpers\AbstractBizzaroActions.cs" />
     <Compile Include="Helpers\BizzaroHelpers\BizzaroAggregate.cs" />
     <Compile Include="Helpers\BizzaroHelpers\BizzaroClient.cs" />
+    <Compile Include="Helpers\BizzaroHelpers\BizzaroAdmin.cs" />
     <Compile Include="Helpers\BizzaroHelpers\BizzaroProducts.cs" />
     <Compile Include="Helpers\BizzaroHelpers\BizzaroReceipts.cs" />
     <Compile Include="Helpers\BizzaroHelpers\BizzaroShoppingList.cs" />

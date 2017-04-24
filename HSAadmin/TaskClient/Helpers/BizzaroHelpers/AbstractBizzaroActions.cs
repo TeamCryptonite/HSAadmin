@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Windows.Navigation;
 using HsaServiceDtos;
 using Microsoft.Identity.Client;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
 
@@ -29,7 +30,7 @@ namespace TaskClient.Helpers.BizzaroHelpers
             request.AddHeader("Accept", "application/json");
 
             if (bodyData != null)
-                request.AddParameter("application/json", bodyData, ParameterType.RequestBody);
+                request.AddJsonBody(bodyData);
         }
 
         public async Task<T> CallBizzaro<T>(IRestRequest request, object bodyData = null)
@@ -42,7 +43,7 @@ namespace TaskClient.Helpers.BizzaroHelpers
                 throw new Exception("Could not process HTTP call. " + response.StatusDescription + ". " +
                                     response.Content);
 
-            return response.Data;
+            return JsonConvert.DeserializeObject<T>(response.Content);
         }
 
        

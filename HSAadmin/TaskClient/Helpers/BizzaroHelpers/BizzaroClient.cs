@@ -2,7 +2,7 @@
 using Microsoft.Identity.Client;
 using TaskClient.Helpers.BizzaroHelpers;
 
-namespace HSAManager
+namespace TaskClient
 {
     public class BizzaroClient
     {
@@ -13,7 +13,7 @@ namespace HSAManager
             Products = new BizzaroProducts(authenticationResult);
             ShoppingLists = new BizzaroShoppingLists(authenticationResult);
             Aggregate = new BizzaroAggregate(authenticationResult);
-
+            Admin = new BizzaroAdmin(authenticationResult);
         }
 
         public BizzaroReceipts Receipts { get; set; }
@@ -21,5 +21,6 @@ namespace HSAManager
         public BizzaroProducts Products { get; set; }
         public BizzaroShoppingLists ShoppingLists { get; set; }
         public BizzaroAggregate Aggregate { get; set; }
+        public BizzaroAdmin Admin { get; set; }
     }
 }
